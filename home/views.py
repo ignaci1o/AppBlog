@@ -133,3 +133,7 @@ def verify(request, token):
         print(e)
 
     return redirect('/')
+
+
+def about_me(request):
+    return render(request, 'about_me.html')

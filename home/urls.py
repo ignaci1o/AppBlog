@@ -1,3 +1,5 @@
+import profile
+
 from django.urls import path
 from .views import *
 
@@ -12,4 +14,5 @@ urlpatterns = [
     path('Blog-update/<slug>/', blog_update, name="blog_update"),
     path('logout-view/', logout_view, name="logout_view"),
     path('verify/<token>/', verify, name="verify"),
+    path('about_me/', about_me, name="about_me"),
 ]

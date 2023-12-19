@@ -1,8 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  
-<!-- Mirrored from demo.bootstrapious.com/directory/1-6-1/Blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Apr 2021 09:21:30 GMT -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,18 +22,17 @@
     <link rel="stylesheet" href="/media/css/default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="/media/css/custom.css">
-    <script src="/media/js/main.js"> </script>
-
-
-   </head>
-  <body style="padding-top: 72px;">
-    <input type="hidden" id="csrf" value="{{csrf_token}}">
+    <!-- Agrega aquí tus estilos personalizados -->
+    {% block custom_styles %}{% endblock %}
+</head>
+<body style="padding-top: 72px;">
+    <input type="hidden" id="csrf" value="{{ csrf_token }}">
     <header class="header">
      
       <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
         <div class="container-fluid">
           <div class="d-flex align-items-center"><a class="navbar-brand py-1" href="/">
-          <h3>Jose Ignacio Tula Molina App</h3>
+          <h3>Blog App</h3>
           </div>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
           <!-- Navbar Collapse -->
@@ -45,7 +42,7 @@
               
               {% if request.user.is_authenticated %}
               <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
-                <a class="btn btn-info" href="{% url 'add_blog' %}">Add Blogs</a>
+                <a class="btn btn-info" href="{% url 'add_blog' %}">Agregar Blogs</a>
               </li>
               <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
                 <a class="btn btn-danger" href="{% url 'logout_view' %}">Logout</a>
@@ -53,10 +50,14 @@
 
               {% else %}
               <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
-                <a class="btn btn-primary" href="{% url 'login_view' %}">Add Blog</a>
+                <a class="btn btn-primary" href="{% url 'login_view' %}">Agregar Blog</a>
               </li>
 
               {% endif %}
+
+              <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+                <a class="btn btn-info" href="{% url 'about_me' %}">Acerca de Mí</a>
+              </li>
 
             </ul>
           </div>
@@ -68,9 +69,9 @@
 
     {% block start %}
 
+        <!-- Contenido específico de la página (o cualquier contenido general) -->
 
     {% endblock %}
-
 
     <footer class="position-relative z-index-10 d-print-none">
    
@@ -85,7 +86,13 @@
         </div>
       </div>
     </footer>
-   
+    <!-- Agrega aquí tus scripts personalizados -->
+    {% block custom_scripts %}
+        <script src="/media/js/main.js"></script>
+        <script src="/media/js/about_me_scripts.js"></script>
+        <!-- Agrega scripts específicos para la página "Acerca de Mí" aquí -->
+    {% endblock %}
+
     
   </body>
 
