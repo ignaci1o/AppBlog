@@ -11,3 +11,4 @@ Instale los paquetes necesarios utilizando el comando pip install -r requirement
 Configure la base de datos utilizando el comando python manage.py migrate.
 Ejecute la aplicación utilizando el comando python manage.py runserver.
 ```
+Video del proyecto: https://youtu.be/5FlRI9a_S7U
